@@ -6,12 +6,16 @@ end
 
 class DockingStation
   attr_reader (:empty)
-  def initialize(empty)
+  def initialize(empty=0)
     @empty = empty
   end
 
   def release_bike
-    Bike.new
+    if @empty > 0
+      Bike.new
+    else 
+    raise Exception.new "There are no bikes."
+    end
   end
 
   def dock_bike
