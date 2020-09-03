@@ -23,4 +23,8 @@ describe DockingStation do
     station = DockingStation.new(0)
     expect {station.release_bike}.to raise_error
   end
+  it 'raises an error when trying to dock a bike at a full docking station' do
+    station = DockingStation.new(10)
+    expect {station.dock_bike}.to raise_error
   end
+end

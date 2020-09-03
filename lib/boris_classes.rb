@@ -11,16 +11,16 @@ class DockingStation
   end
 
   def release_bike
-    if @empty > 0
+    if @empty == 0
+      raise Exception.new "There are no bikes."
+    else
       Bike.new
-    else 
-    raise Exception.new "There are no bikes."
     end
   end
 
   def dock_bike
     if @empty == 10
-      return "There is already a bike here"
+      fail "This docking station is full"
     elsif @empty < 10
       @empty += 1
       return "The bike has been docked"
