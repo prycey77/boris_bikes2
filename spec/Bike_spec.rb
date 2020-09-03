@@ -1,4 +1,4 @@
-require 'Bike'
+require 'boris_classes'
 
 describe Bike do
     describe 'a method that asks if a bike is working' do
