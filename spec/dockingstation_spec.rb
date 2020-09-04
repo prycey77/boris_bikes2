@@ -35,4 +35,8 @@ describe DockingStation do
     
     end
   end
+
+  it "checks to see if a user can set the capacity" do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
 end
