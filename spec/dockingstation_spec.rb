@@ -1,5 +1,6 @@
 require "boris_classes"
 
+
 describe DockingStation do
   station = DockingStation.new
   it "responds to releasing a bike from docking station" do
@@ -25,9 +26,13 @@ describe DockingStation do
   end
 
   describe "#dock_bike" do
+    
     it "checks that 20 bikes can be released" do
-      20.times { subject.dock_bike Bike.new }
+      DockingStation::DEFAULT_CAPACITY.times do
+      subject.dock_bike Bike.new
+      end
       expect { subject.dock_bike Bike.new }.to raise_error "This docking station is full"
+    
     end
   end
 end
