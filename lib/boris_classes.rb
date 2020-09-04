@@ -5,19 +5,19 @@ class Bike
 end
 
 class DockingStation
-  attr_reader :bike
+  attr_reader :bikes
 
   def initialize
     @bikes = []
   end
 
   def release_bike
-    fail "There are no bikes." if @bike.length == 0
+    fail "There are no bikes." if @bikes.length == 0
     @bikes.pop
   end
 
   def dock_bike(bike)
-    fail "This docking station is full" if @bike.length >= 20
+    fail "This docking station is full" if @bikes.length >= 20
     @bikes << bike
     return "The bike has been docked"
   end
